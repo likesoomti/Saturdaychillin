@@ -31,12 +31,16 @@ class SplashActivity : AppCompatActivity() {
         val pref = getSharedPreferences("user",Context.MODE_MULTI_PROCESS or Context.MODE_WORLD_READABLE)
 
         var id = pref.getString("id","")
-        if (id==null) {
-            Log.d(TAG,"to index Activity")
-            intent = Intent(applicationContext,IndexActivity::class.java)
-        }else {
+        val email = pref.getString("email","")
+
+        if (id == null) {
             Log.d(TAG,"to Main Activity")
             intent = Intent(applicationContext,MainActivity::class.java)
+        }else {
+            Log.d(TAG,"to Index Activity")
+            intent = Intent(applicationContext,IndexActivity::class.java)
+            intent.putExtra("id",id)
+            intent.putExtra("email",email)
         }
         startActivity(intent)
 
