@@ -18,26 +18,15 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        Log.d("id", "test")
-        Realm.getDefaultInstance().use { realm ->
-            realm.where(User::class.java).findAll().forEach {
 
-                Log.d("id", "${it.id}")
-                Log.d("name", "${it.password}")
-                Log.d("age", "${it.email}")
-            }
-        }
-
-        val pref = getSharedPreferences("user",Context.MODE_MULTI_PROCESS or Context.MODE_WORLD_READABLE)
-
-        var id = pref.getString("id","")
+        val pref = getSharedPreferences("user",0)
+        val id = pref.getString("id","")
         val email = pref.getString("email","")
 
         if (id == null) {
-            Log.d(TAG,"to Main Activity")
             intent = Intent(applicationContext,MainActivity::class.java)
-        }else {
-            Log.d(TAG,"to Index Activity")
+        }
+        else {
             intent = Intent(applicationContext,IndexActivity::class.java)
             intent.putExtra("id",id)
             intent.putExtra("email",email)

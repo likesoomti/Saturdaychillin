@@ -8,11 +8,8 @@ import android.widget.Toast
 import com.soomti.saturdaychillin.MODEL.User
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main.*
-import android.R.id.edit
 import android.content.Context
-import android.content.SharedPreferences
-import android.content.Context.MODE_MULTI_PROCESS
-import android.util.Log
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,9 +26,6 @@ class MainActivity : AppCompatActivity() {
             val select_user = realm.where(User::class.java)
                     .equalTo("id", user_id.text.toString())
                     .findFirst()
-
-            Log.d("selectUser",select_user?.password)
-            Log.d("user_password",user_password.text.toString())
 
             if (select_user == null) {
                 Toast.makeText(this,"아이디가 존재하지 않습니다.",Toast.LENGTH_LONG).show()

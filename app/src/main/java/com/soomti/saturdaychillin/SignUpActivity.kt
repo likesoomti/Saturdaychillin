@@ -1,5 +1,6 @@
 package com.soomti.saturdaychillin
 
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_sign_up.*
 import com.soomti.saturdaychillin.MODEL.User
 import com.soomti.saturdaychillin.UTIL.REGEX_EMAIL
 import io.realm.Realm
+
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -52,6 +54,7 @@ class SignUpActivity : AppCompatActivity() {
                 intent = Intent(applicationContext,MainActivity::class.java)
                 startActivity(intent)
                 finish()
+
             }
         })
     }
