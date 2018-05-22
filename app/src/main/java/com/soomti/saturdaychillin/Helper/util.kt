@@ -1,6 +1,9 @@
-package com.soomti.saturdaychillin
+package com.soomti.saturdaychillin.Helper
 import android.content.Context
-import com.soomti.saturdaychillin.MODEL.User
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.Button
+import android.widget.EditText
 import java.util.regex.Pattern
 
 val REGEX_ID = "^[a-zA-Z0-9]{5,}$"

@@ -1,6 +1,7 @@
-package com.soomti.saturdaychillin
+package com.soomti.saturdaychillin.Activities
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.soomti.saturdaychillin.R
 import org.jetbrains.anko.startActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -10,7 +11,8 @@ class SplashActivity : AppCompatActivity() {
 
         val pref = getSharedPreferences("user",0)
 
-        if (pref == null) startActivity<MainActivity>()
+        if (pref == null)
+            startActivity<MainActivity>()
         else {
             val id = pref.getString("id","")
             val email = pref.getString("email","")

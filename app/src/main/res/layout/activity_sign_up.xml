@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity"
+    tools:context=".Activities.SignUpActivity"
     tools:layout_editor_absoluteY="81dp">
 
     <EditText
@@ -17,9 +17,9 @@
         android:ems="10"
         android:hint="아이디"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/id_error_msg"
-        app:layout_constraintStart_toStartOf="@+id/id_error_msg"
-        app:layout_constraintTop_toBottomOf="@+id/id_error_msg" />
+        app:layout_constraintEnd_toEndOf="@+id/error_msg"
+        app:layout_constraintStart_toStartOf="@+id/error_msg"
+        app:layout_constraintTop_toBottomOf="@+id/error_msg" />
 
     <EditText
         android:id="@+id/user_email"
@@ -74,47 +74,16 @@
         app:layout_constraintTop_toBottomOf="@+id/user_password2" />
 
     <TextView
-        android:id="@+id/id_error_msg"
+        android:id="@+id/error_msg"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_red_light"
-        app:layout_constraintEnd_toEndOf="@+id/email_error_msg"
-        app:layout_constraintStart_toStartOf="@+id/email_error_msg"
-        app:layout_constraintTop_toBottomOf="@+id/email_error_msg" />
-
-    <TextView
-        android:id="@+id/pwd_error_msg"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
         android:textAlignment="center"
         android:textColor="@android:color/holo_red_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/pwd2_error_msg"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_red_light"
-        app:layout_constraintEnd_toEndOf="@+id/pwd_error_msg"
-        app:layout_constraintStart_toStartOf="@+id/pwd_error_msg"
-        app:layout_constraintTop_toBottomOf="@+id/pwd_error_msg" />
-
-    <TextView
-        android:id="@+id/email_error_msg"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_red_light"
-        app:layout_constraintEnd_toEndOf="@+id/pwd2_error_msg"
-        app:layout_constraintStart_toStartOf="@+id/pwd2_error_msg"
-        app:layout_constraintTop_toBottomOf="@+id/pwd2_error_msg" />
 
 </android.support.constraint.ConstraintLayout>
