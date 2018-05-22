@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity() {
                 editor.commit()
 
                 intent = Intent(this,IndexActivity::class.java)
+                intent.putExtra("id",select_user.id)
+                intent.putExtra("email",select_user.email)
                 startActivity(intent)
                 finish()
             }
