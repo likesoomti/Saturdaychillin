@@ -1,17 +1,13 @@
 package com.soomti.saturdaychillin
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.soomti.saturdaychillin.UTIL.REGEX_ID
-import com.soomti.saturdaychillin.UTIL.REGEX_PW
-import com.soomti.saturdaychillin.UTIL.validateRegex
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import com.soomti.saturdaychillin.MODEL.User
 import io.realm.Realm
 import android.text.Editable
 import android.text.TextWatcher
-import com.soomti.saturdaychillin.UTIL.REGEX_EMAIL
+import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -101,21 +97,13 @@ class SignUpActivity : AppCompatActivity() {
                 user.password = user_password.text.toString()
                 user.email = user_email.text.toString()
             }
-
-            Toast.makeText(applicationContext,"회원가입이 완료 되었습니다.",Toast.LENGTH_LONG).show()
-            intent = Intent(applicationContext,MainActivity::class.java)
-            startActivity(intent)
+            toast("회원가입이 완료 되었습니다")
+            startActivity<MainActivity>()
             finish()
         })
     }
 
     fun setChangedButton(id: Boolean,pwd: Boolean,pwd2: Boolean,email: Boolean){
-        if(id && pwd && pwd2 && email){
-            signupbutton.isEnabled = true
-        }
-        else{
-            signupbutton.isEnabled = false
-        }
-
+        signupbutton.isEnabled = id && pwd && pwd2 && email
     }
 }

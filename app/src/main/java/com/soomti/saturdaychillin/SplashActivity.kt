@@ -1,28 +1,20 @@
 package com.soomti.saturdaychillin
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import org.jetbrains.anko.startActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-
         val pref = getSharedPreferences("user",0)
-        val id = pref.getString("id","")
-        val email = pref.getString("email","")
 
-        if (id == null || id == "") {
-            intent = Intent(applicationContext,MainActivity::class.java)
-        }
+        if (pref == null) startActivity<MainActivity>()
         else {
-            intent = Intent(applicationContext,IndexActivity::class.java)
-            intent.putExtra("id",id)
-            intent.putExtra("email",email)
+            val id = pref.getString("id","")
+            val email = pref.getString("email","")
+            startActivity<IndexActivity>("id" to id, "email" to email)
         }
-        startActivity(intent)
-
     }
 }
